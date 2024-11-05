@@ -51,7 +51,7 @@ const config = {
     ],
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-      (navbar: {
+      {navbar: {
           title: 'hikyuuPX',
           hideOnScroll: true,
           logo: {
@@ -93,6 +93,6 @@ const config = {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
         },
-      }),
+      },
 };
 module.exports = config;
