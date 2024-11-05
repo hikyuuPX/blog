@@ -12,7 +12,7 @@ function HomepageHeader() {
   return (
     <div className={styles.myHeroContainer}>
       <a className={styles.button} href={'../docs/introduction'}>
-        <Translate id="hompage.hero.introduce">知识库</Translate>
+        知识库
       </a>
     </div>
   )
