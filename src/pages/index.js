@@ -11,7 +11,7 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <div className={styles.myHeroContainer}>
-      <Link className="button button--secondary button--lg" to="/docs">
+      <Link className="button button--secondary button--lg" to="../../docs">
         进入
       </Link>
     </div>
