@@ -5,14 +5,14 @@ const announcementBarContent = `🎉欢迎浏览<a href="https://github.com/wrm2
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'docusaurus-theme-zen',
+  title: 'hikyuuPX的随笔',
   titleDelimiter: '-',
-  url: 'https://wrm244.github.io/',//请填写你的网站
-  baseUrl: '/docusaurus-theme-zen/',//建议填写/
+  url: 'https://your-docusaurus-site.example.com',//请填写你的网站
+  baseUrl: '/',//建议填写/
   favicon: '/assets/images/social/avatar.ico',
-  organizationName: '',
-  projectName: 'docusaurus-theme-zen',
-  tagline: 'docusaurus的一款美观便捷主题',
+  organizationName: 'hikyuuPX',
+  projectName: 'blog',
+  tagline: '【道常无为而无不为】',
   onBrokenLinks: 'ignore',  //忽略坏链
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
