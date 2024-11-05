@@ -6,7 +6,7 @@ const FeatureList = [
   {
     
     //title: 'Update',
-    Svg: require('@site/static/img/Page1.svg').default,
+    Svg: require('@site/static/svg/Page1.svg').default,
     /*description: (
       <>
         ohhhhhhhhh
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     //title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/svg/undraw_docusaurus_tree.svg').default,
     /*description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     //title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/svg/undraw_docusaurus_react.svg').default,
     /*description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
