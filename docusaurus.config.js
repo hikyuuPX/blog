@@ -30,21 +30,26 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          path: 'docs',
+          sidebarPath: 'sidebars.js',
+          remarkPlugins: [(await import('remark-math')).default],
+          rehypePlugins: [(await import('rehype-katex')).default],
         },
-        blog: {
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-
-        },
+        blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [require.resolve('./src/css/custom.css')],
+        },
+        sitemap: {
+          changefreq: 'daily',
+          priority: 0.5,
+        },
+        gtag: {
+          trackingID: 'G-S4SD5NXWXF',
+          anonymizeIP: true,
         },
       }),
     ],
@@ -73,7 +78,7 @@ const config = {
         }, {
           label: '关于我',
           position: 'right',
-          to: "/blog",
+          to: "/docs",
         },
       ],
     },
@@ -81,7 +86,6 @@ const config = {
       style: 'dark',
       copyright: `本站所有内容遵循<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" ></a>开源协议，仅限非商业性使用，转载请注明出处
                     <p>Copyright © ${new Date().getFullYear()} - PRESENT hikyuuPX, Inc. Built with Docusaurus.</p>
-                    <span id="runtime_span"></span>
                     <script type="text/javascript">function show_runtime(){window.setTimeout("show_runtime()",1000);X=new 
                     Date("11/05/2024 12:00:00");
                     Y=new Date();T=(Y.getTime()-X.getTime());M=24*60*60*1000;
