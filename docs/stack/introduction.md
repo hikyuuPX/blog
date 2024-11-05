@@ -1,9 +1,9 @@
 ---
 id: introduction
-slug: /Stack
+slug: /stack
 title: README
 last_update:
-  date: 2023/04/22
+  date: 2024/11/05
 ---
 
 ## 这里记录笔记

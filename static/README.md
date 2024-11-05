@@ -7,4 +7,4 @@
 > This is the source repository of the git page, which is rendered and deployed by deocsaurus. The code is compressed, so it has no reference value. That’s why I wrote this readme to remind you that this is just a warehouse for static source code acquisition.
 ## License
 
-MIT © 河山 100%
+MIT © hikyuuPX 100%
