@@ -10,8 +10,6 @@ const config = {
   tagline: '【道常无为而无不为】',
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.jpg',
 
   // GitHub pages deployment config.
@@ -58,7 +56,7 @@ const config = {
     navbar: {
       logo: {
         alt: 'hikyuuPX的随笔',
-        src: 'img/src.webp',
+        src: 'img/favicon.jpg',
       },
       items: [ //顶部菜单栏
         {
