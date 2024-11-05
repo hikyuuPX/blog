@@ -3,10 +3,6 @@
 
 # Production
 /build
-/drafts
-/tmp
-/.vscode
-cloudbaserc.json
 
 # Generated files
 .docusaurus
@@ -18,14 +14,7 @@ cloudbaserc.json
 .env.development.local
 .env.test.local
 .env.production.local
-.env
-
-# Packages
-/packages
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-error.log*
-
-
