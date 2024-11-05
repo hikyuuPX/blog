@@ -10,6 +10,7 @@ const config = {
   title: 'hikyuuPX的随笔',
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
+  onBrokenLinks: 'ignore',
   favicon: 'img/favicon.jpg',
   tagline: '【道常无为而无不为】',
 
