@@ -6,7 +6,6 @@ import Translate from '@docusaurus/Translate'
 import HeroMain from './img/hero_main.svg'
 
 import styles from './styles.module.scss'
-import SocialLinks from '@site/src/components/SocialLinks'
 
 import { Icon, IconProps } from '@iconify/react'
 
@@ -179,7 +178,6 @@ export default function Hero() {
           animate="visible"
           variants={variants}
         >
-          <SocialLinks />
         </motion.div>
 
         <motion.div
