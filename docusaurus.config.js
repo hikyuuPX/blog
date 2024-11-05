@@ -41,6 +41,11 @@ const config = {
         hideable: true,
       },
     },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       title: 'hikyuuPX的随笔',
       logo: {
