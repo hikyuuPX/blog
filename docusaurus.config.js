@@ -56,7 +56,7 @@ const config = {
     navbar: {
       logo: {
         alt: 'hikyuuPX的随笔',
-        src: 'img/favicon.jpg',
+        src: 'img/favicon.webp',
       },
       items: [ //顶部菜单栏
         {
