@@ -79,7 +79,7 @@ const config = {
     },
     footer: { //页面底部菜单栏
       style: 'dark',
-      copyright: `本站所有内容遵循<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" >${beian}</a>开源协议，仅限非商业性使用，转载请注明出处</p>
+      copyright: `本站所有内容遵循<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" >${beian}</a>开源协议，仅限非商业性使用，转载请注明出处
                     <p>Copyright © ${new Date().getFullYear()} - PRESENT hikyuuPX, Inc. Built with Docusaurus.</p>
                     <span id="runtime_span"></span>
                     <script type="text/javascript">function show_runtime(){window.setTimeout("show_runtime()",1000);X=new 
