@@ -1,28 +1,31 @@
 const path = require('path')
 const math = require('remark-math');
 const katex = require('rehype-katex');
-const announcementBarContent = `🎉欢迎浏览<a href="https://github.com/wrm244/docusaurus-theme-zen/" target="_blank">docusaurus-theme-zen</a>`
+const announcementBarContent = `🎉欢迎浏览hikyuuPX的随笔`
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'hikyuuPX的随笔',
   titleDelimiter: '-',
-  url: 'https://your-docusaurus-site.example.com',//请填写你的网站
-  baseUrl: '/',//建议填写/
+  url: 'https://your-docusaurus-site.example.com', //请填写你的网站
+  baseUrl: '/', //建议填写/
   favicon: '/assets/images/social/avatar.ico',
   organizationName: 'hikyuuPX',
   projectName: 'blog',
   tagline: '【道常无为而无不为】',
-  onBrokenLinks: 'ignore',  //忽略坏链
+  onBrokenLinks: 'ignore', //忽略坏链
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
     image: '/assets/images/social/avatar.png',
     announcementBar: {
-       id: 'announcementBar-3',
+      id: 'announcementBar-3',
       content: announcementBarContent,
-     },
+    },
     mermaid: {
-      theme: { light: 'neutral', dark: 'forest' },
+      theme: {
+        light: 'neutral',
+        dark: 'forest'
+      },
     },
     colorMode: {
       defaultMode: 'light',
@@ -32,147 +35,67 @@ const config = {
     prism: {
       showLinenums: true,
     },
-    metadata: [
-      {
-        name: 'keywords',
-        content: 'docusaurus-theme-zen',
-      },
-      {
-        name: 'keywords',
-        content: 'blog,javascript, nginx,, react, vue, web',
-      },
-      {
-        name: 'keywords',
-        content: ' 编程爱好者',
-      },
-    ],
+    metadata: [{
+      name: 'keywords',
+      content: ' 编程爱好者',
+    }, ],
     docs: {
       sidebar: {
         hideable: true,
       },
     },
     navbar: {
-      title: 'docusaurus-theme-zen',
+      title: 'hikyuuPX的随笔',
       logo: {
-        alt: 'your name',
+        alt: 'hikyuuPX',
         src: '/assets/images/social/avatar.png',
-        srcDark: '/assets/images/social/avatar.png',//记得加上绝对路径/
+        srcDark: '/assets/images/social/avatar.png', //记得加上绝对路径/
       },
       hideOnScroll: false,
-      items: [
-        {
-          label: '博客',
-          position: 'left',
-          items: [
-            {
-              label: '标签',
-              to: 'tags',
-            },
-            {
-              label: '归档',
-              to: 'archive',
-            },
-            {
-              label: '随笔',
-              to: 'tags/lifestyle',
-            },
-          ],
-        },
-        {
-          label: '笔记',
-          position: 'left',
+      items: [{
+        label: '博客',
+        position: 'left',
+        items: [{
+          label: '标签',
+          to: 'tags',
+        }, {
+          label: '归档',
+          to: 'archive',
+        }, {
+          label: '随笔',
+          to: 'tags/lifestyle',
+        }, ],
+      }, {
+        label: '笔记',
+        position: 'left',
+        to: 'docs/stack/',
+        items: [{
+          label: '学习栈',
           to: 'docs/stack/',
-          items: [
-            {
-              label: '本站的搭建',
-              to: 'first-blog',
-            },
-            {
-              label: '学习栈',
-              to: 'docs/stack/',
-            },
-          ],
-        },
-        {
-          label: '导航',
-          position: 'left',
-          to: 'resource',
-        },
-        {
-          label: '项目',
-          position: 'left',
-          to: 'project',
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
-      ],
+        }, ],
+      }, {
+        label: '导航',
+        position: 'left',
+        to: 'resource',
+      }, {
+        label: '项目',
+        position: 'left',
+        to: 'project',
+      }, {
+        label: '关于我',
+        position: 'left',
+        to: 'about',
+      }, {
+        type: 'localeDropdown',
+        position: 'right',
+      }, ],
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: '博客',
-          items: [
-            {
-              label: '标签',
-              to: 'tags',
-            },
-            {
-              label: '归档',
-              to: 'archive',
-            },
-
-          ],
-        },
-        {
-          title: '学习',
-          items: [
-            {
-              label: '笔记',
-              to: 'docs/stack',
-            },
-            {
-              label: '项目',
-              to: 'project',
-            },
-          ],
-        },
-        {
-          title: '社交媒体',
-          items: [
-            {
-              label: '关于我',
-              to: '/about',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/wrm244/docusaurus-theme-zen',
-            },
-          ],
-        },
-        {
-          title: '更多',
-          items: [
-            {
-              label: '友链',
-              to: 'friends',
-            },
-            {
-              label: '导航',
-              to: 'resource',
-            },
-            {
-              html: `<a href="https://docusaurus.io/zh-CN/" target="_blank"><img alt="Built with Docusaurus" style="height:50px;margin-top:0.5rem" src="/assets/images/buildwith.png" /></a> <a href="https://www.netlify.com/" target="_blank"><img alt="Built with Netlify" style="height:50px;margin-top:0.5rem" src="/assets/images/netlify-color-accent.svg" /></a>`,
-            },
-          ],
-        },
-      ],
-      copyright: `版权所有 © ${new Date().getFullYear()} docusaurus-theme-zen, 此网站使用 <a href="https://docusaurus.io/zh-CN/" target="_blank">Docusaurus</a> 搭建
+      copyright: `版权所有 © ${new Date().getFullYear()} hikyuuPX, 此网站使用 <a href="https://docusaurus.io/zh-CN/" target="_blank">Docusaurus</a> 搭建
       <span id="runtime_span"></span>
       <script type="text/javascript">function show_runtime(){window.setTimeout("show_runtime()",1000);X=new 
-      Date("10/16/2022 8:22:00");
+      Date("11/05/2024 12:00:00");
       Y=new Date();T=(Y.getTime()-X.getTime());M=24*60*60*1000;
       a=T/M;A=Math.floor(a);b=(a-A)*24;B=Math.floor(b);c=(b-B)*60;C=Math.floor((b-B)*60);D=Math.floor((c-C)*60);
       runtime_span.innerHTML="<br>本站已运行: "+A+"天"+B+"小时"+C+"分"+D+"秒"}show_runtime();</script>`,
@@ -182,27 +105,22 @@ const config = {
       darkTheme: require('prism-react-renderer/themes/vsDark'),
       additionalLanguages: ['java', 'php', 'rust', 'toml'],
       defaultLanguage: 'javascript',
-      magicComments: [
-        {
-          className: 'theme-code-block-highlighted-line',
-          line: 'highlight-next-line',
-          block: { start: 'highlight-start', end: 'highlight-end' },
+      magicComments: [{
+        className: 'theme-code-block-highlighted-line',
+        line: 'highlight-next-line',
+        block: {
+          start: 'highlight-start',
+          end: 'highlight-end'
         },
-        {
-          className: 'code-block-error-line',
-          line: 'This will error',
-        },
-      ],
+      }, {
+        className: 'code-block-error-line',
+        line: 'This will error',
+      }, ],
     },
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
     },
-    // algolia: { algolia 评论插件需要安装
-    //   appId: 'S4K9Vx4X',
-    //   apiKey: '3bf796bbbc1561253bcb25dafc',
-    //   indexName: 'wikiblog',
-    // },
     zoom: {
       selector: '.markdown :not(em) > img',
       background: {
@@ -215,7 +133,7 @@ const config = {
       },
     },
     giscus: {
-      repo: 'wrm244/docusaurus-theme-zen',
+      repo: 'wrm244/hikyuuPX',
       repoId: 'R_kgDOJZ-VIA',
       category: 'General',
       categoryId: 'DIC_kwDOJZ-VIM4CV95r',
@@ -225,24 +143,19 @@ const config = {
     liveCodeBlock: {
       playgroundPosition: 'top',
     },
-    socials: {//需要修改
-      github: 'https://github.com/',
-      twitter: 'https://twitter.com/',
-      csdn: 'https://blog.csdn.net/',
-      juejin: 'https://juejin.cn/',
-      qq: 'tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=xxxxxxxx&website=www.oicqzone.com',
-      zhihu: 'https://www.zhihu.com/',
+    socials: { // 社交网站链接
+      github: 'https://github.com/hikyuuPX',
+      csdn: 'https://blog.csdn.net/Eternally_Time',
+      zhihu: 'https://www.zhihu.com/people/zuo-you-36-87-74',
     },
   },
-  headTags: [
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'description',
-        content: 'docusaurus-theme-zen',
-      },
+  headTags: [{
+    tagName: 'meta',
+    attributes: {
+      name: 'description',
+      content: 'hikyuuPX的随笔',
     },
-  ],
+  }, ],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -277,72 +190,77 @@ const config = {
     path.resolve(__dirname, './src/plugin/plugin-baidu-tongji'),
     path.resolve(__dirname, './src/plugin/plugin-baidu-push'),
     [
-      path.resolve(__dirname, './src/plugin/plugin-content-blog'),
-      {
+      path.resolve(__dirname, './src/plugin/plugin-content-blog'), {
         path: 'blog',
         routeBasePath: '/',
-        editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-          `https://github.com/wrm244/docusaurus-theme-zen/edit/main/${blogDirPath}/${blogPath}`,
+        editUrl: ({
+            locale,
+            blogDirPath,
+            blogPath,
+            permalink
+          }) =>
+          `https://github.com/hikyuuPX/blog/master/${blogDirPath}/${blogPath}`,
         editLocalizedFiles: false,
-        blogDescription: 'docusaurus-theme-zen',
+        blogDescription: 'hikyuuPX的随笔',
         blogSidebarCount: 10,
         blogSidebarTitle: '最近更新',
         postsPerPage: 10,
         showReadingTime: true,
-        readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-          defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+        readingTime: ({
+            content,
+            frontMatter,
+            defaultReadingTime
+          }) =>
+          defaultReadingTime({
+            content,
+            options: {
+              wordsPerMinute: 300
+            }
+          }),
         feedOptions: {
           type: 'all',
-          title: 'docusaurus-theme-zen',
-          copyright: `Copyright © ${new Date().getFullYear()} your name Built with Docusaurus. class="footer_lin">`,
+          title: 'hikyuuPX的随笔',
+          copyright: `Copyright © ${new Date().getFullYear()} hikyuuPX Built with Docusaurus. class="footer_lin">`,
         },
       },
     ],
     [
-      '@docusaurus/plugin-ideal-image',
-      {
+      '@docusaurus/plugin-ideal-image', {
         quality: 80,
         disableInDev: false,
       },
     ],
     [
-      '@docusaurus/plugin-pwa',
-      {
+      '@docusaurus/plugin-pwa', {
         debug: true,
         offlineModeActivationStrategies: [
           'appInstalled',
           'standalone',
           'queryString',
         ],
-        pwaHead: [
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: 'assets/images/social/avatar.png',
-          },
-          {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json',
-          },
-          {
+        pwaHead: [{
+          tagName: 'link',
+          rel: 'icon',
+          href: 'assets/images/social/avatar.png',
+        }, {
+          tagName: 'link',
+          rel: 'manifest',
+          href: '/manifest.json',
+        }, {
 
-            tagName: 'meta',
-            name: 'theme-color',
-            content: 'rgb(51 139 255)',
-          },
-        ],
+          tagName: 'meta',
+          name: 'theme-color',
+          content: 'rgb(51 139 255)',
+        }, ],
       },
     ],
   ],
-  stylesheets: [
-    {
+  stylesheets: [{
     href: 'https://jsd.onmicrosoft.cn/npm/katex@0.13.24/dist/katex.min.css',
     type: 'text/css',
-    integrity:
-      'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+    integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
     crossorigin: 'anonymous',
-  },],
+  }, ],
   i18n: {
     defaultLocale: 'zh-CN',
     locales: ['en', 'zh-CN'],
