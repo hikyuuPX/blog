@@ -50,9 +50,11 @@ function HomepageHeader() {
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <HomepageHeader />
-    <main>
-      <HomepageFeatures />
-    </main>
+    <Layout>
+      <HomepageHeader />
+      <main>
+        <HomepageFeatures />
+      </main>
+    </Layout>
   );
 }
