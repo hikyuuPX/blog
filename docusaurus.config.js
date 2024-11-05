@@ -1,151 +1,372 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+const path = require('path')
+const math = require('remark-math');
+const katex = require('rehype-katex');
+const announcementBarContent = `🎉欢迎浏览<a href="https://github.com/wrm244/docusaurus-theme-zen/" target="_blank">docusaurus-theme-zen</a>`
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'docusaurus-theme-zen',
+  titleDelimiter: '-',
+  url: 'https://wrm244.github.io/',//请填写你的网站
+  baseUrl: '/docusaurus-theme-zen/',//建议填写/
+  favicon: '/assets/images/social/avatar.ico',
+  organizationName: '',
+  projectName: 'docusaurus-theme-zen',
+  tagline: 'docusaurus的一款美观便捷主题',
+  onBrokenLinks: 'ignore',  //忽略坏链
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  themeConfig: {
+    image: '/assets/images/social/avatar.png',
+    announcementBar: {
+       id: 'announcementBar-3',
+      content: announcementBarContent,
+     },
+    mermaid: {
+      theme: { light: 'neutral', dark: 'forest' },
+    },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+    prism: {
+      showLinenums: true,
+    },
+    metadata: [
+      {
+        name: 'keywords',
+        content: 'docusaurus-theme-zen',
+      },
+      {
+        name: 'keywords',
+        content: 'blog,javascript, nginx,, react, vue, web',
+      },
+      {
+        name: 'keywords',
+        content: ' 编程爱好者',
+      },
+    ],
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
+    navbar: {
+      title: 'docusaurus-theme-zen',
+      logo: {
+        alt: 'your name',
+        src: '/assets/images/social/avatar.png',
+        srcDark: '/assets/images/social/avatar.png',//记得加上绝对路径/
+      },
+      hideOnScroll: false,
+      items: [
+        {
+          label: '博客',
+          position: 'left',
+          items: [
+            {
+              label: '标签',
+              to: 'tags',
+            },
+            {
+              label: '归档',
+              to: 'archive',
+            },
+            {
+              label: '随笔',
+              to: 'tags/lifestyle',
+            },
+          ],
+        },
+        {
+          label: '笔记',
+          position: 'left',
+          to: 'docs/stack/',
+          items: [
+            {
+              label: '本站的搭建',
+              to: 'first-blog',
+            },
+            {
+              label: '学习栈',
+              to: 'docs/stack/',
+            },
+          ],
+        },
+        {
+          label: '导航',
+          position: 'left',
+          to: 'resource',
+        },
+        {
+          label: '项目',
+          position: 'left',
+          to: 'project',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: '博客',
+          items: [
+            {
+              label: '标签',
+              to: 'tags',
+            },
+            {
+              label: '归档',
+              to: 'archive',
+            },
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+          ],
+        },
+        {
+          title: '学习',
+          items: [
+            {
+              label: '笔记',
+              to: 'docs/stack',
+            },
+            {
+              label: '项目',
+              to: 'project',
+            },
+          ],
+        },
+        {
+          title: '社交媒体',
+          items: [
+            {
+              label: '关于我',
+              to: '/about',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/wrm244/docusaurus-theme-zen',
+            },
+          ],
+        },
+        {
+          title: '更多',
+          items: [
+            {
+              label: '友链',
+              to: 'friends',
+            },
+            {
+              label: '导航',
+              to: 'resource',
+            },
+            {
+              html: `<a href="https://docusaurus.io/zh-CN/" target="_blank"><img alt="Built with Docusaurus" style="height:50px;margin-top:0.5rem" src="/assets/images/buildwith.png" /></a> <a href="https://www.netlify.com/" target="_blank"><img alt="Built with Netlify" style="height:50px;margin-top:0.5rem" src="/assets/images/netlify-color-accent.svg" /></a>`,
+            },
+          ],
+        },
+      ],
+      copyright: `版权所有 © ${new Date().getFullYear()} docusaurus-theme-zen, 此网站使用 <a href="https://docusaurus.io/zh-CN/" target="_blank">Docusaurus</a> 搭建
+      <span id="runtime_span"></span>
+      <script type="text/javascript">function show_runtime(){window.setTimeout("show_runtime()",1000);X=new 
+      Date("10/16/2022 8:22:00");
+      Y=new Date();T=(Y.getTime()-X.getTime());M=24*60*60*1000;
+      a=T/M;A=Math.floor(a);b=(a-A)*24;B=Math.floor(b);c=(b-B)*60;C=Math.floor((b-B)*60);D=Math.floor((c-C)*60);
+      runtime_span.innerHTML="<br>本站已运行: "+A+"天"+B+"小时"+C+"分"+D+"秒"}show_runtime();</script>`,
+    },
+    prism: {
+      theme: require('prism-react-renderer/themes/vsLight'),
+      darkTheme: require('prism-react-renderer/themes/vsDark'),
+      additionalLanguages: ['java', 'php', 'rust', 'toml'],
+      defaultLanguage: 'javascript',
+      magicComments: [
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: { start: 'highlight-start', end: 'highlight-end' },
+        },
+        {
+          className: 'code-block-error-line',
+          line: 'This will error',
+        },
+      ],
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 4,
+    },
+    // algolia: { algolia 评论插件需要安装
+    //   appId: 'S4K9Vx4X',
+    //   apiKey: '3bf796bbbc1561253bcb25dafc',
+    //   indexName: 'wikiblog',
+    // },
+    zoom: {
+      selector: '.markdown :not(em) > img',
+      background: {
+        light: '#eef9fd',
+        dark: 'rgb(50, 50, 50)',
+      },
+      config: {
+        magin: 10,
+        scrollOffset: 0,
+      },
+    },
+    giscus: {
+      repo: 'wrm244/docusaurus-theme-zen',
+      repoId: 'R_kgDOJZ-VIA',
+      category: 'General',
+      categoryId: 'DIC_kwDOJZ-VIM4CV95r',
+      loading: "lazy",
+      lang: "zh-CN",
+    },
+    liveCodeBlock: {
+      playgroundPosition: 'top',
+    },
+    socials: {//需要修改
+      github: 'https://github.com/',
+      twitter: 'https://twitter.com/',
+      csdn: 'https://blog.csdn.net/',
+      juejin: 'https://juejin.cn/',
+      qq: 'tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=xxxxxxxx&website=www.oicqzone.com',
+      zhihu: 'https://www.zhihu.com/',
+    },
   },
-
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'description',
+        content: 'docusaurus-theme-zen',
+      },
+    },
+  ],
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          path: 'docs',
+          sidebarPath: 'sidebars.js',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [require.resolve('./src/css/custom.scss')],
+        },
+        sitemap: {
+          changefreq: 'daily',
+          priority: 0.5,
         },
       }),
     ],
   ],
-
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
-      navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+  themes: ['@docusaurus/theme-live-codeblock'],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+  plugins: [
+    // 'docusaurus-plugin-matomo',
+    'docusaurus-plugin-image-zoom',
+    'docusaurus-plugin-sass',
+    path.resolve(__dirname, './src/plugin/plugin-baidu-tongji'),
+    path.resolve(__dirname, './src/plugin/plugin-baidu-push'),
+    [
+      path.resolve(__dirname, './src/plugin/plugin-content-blog'),
+      {
+        path: 'blog',
+        routeBasePath: '/',
+        editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
+          `https://github.com/wrm244/docusaurus-theme-zen/edit/main/${blogDirPath}/${blogPath}`,
+        editLocalizedFiles: false,
+        blogDescription: 'docusaurus-theme-zen',
+        blogSidebarCount: 10,
+        blogSidebarTitle: '最近更新',
+        postsPerPage: 10,
+        showReadingTime: true,
+        readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+          defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+        feedOptions: {
+          type: 'all',
+          title: 'docusaurus-theme-zen',
+          copyright: `Copyright © ${new Date().getFullYear()} your name Built with Docusaurus. class="footer_lin">`,
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 80,
+        disableInDev: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
         ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
+        pwaHead: [
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
+            tagName: 'link',
+            rel: 'icon',
+            href: 'assets/images/social/avatar.png',
           },
           {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
           },
           {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-    }),
-};
 
-export default config;
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(51 139 255)',
+          },
+        ],
+      },
+    ],
+  ],
+  stylesheets: [
+    {
+    href: 'https://jsd.onmicrosoft.cn/npm/katex@0.13.24/dist/katex.min.css',
+    type: 'text/css',
+    integrity:
+      'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+    crossorigin: 'anonymous',
+  },],
+  i18n: {
+    defaultLocale: 'zh-CN',
+    locales: ['en', 'zh-CN'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+    },
+  },
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        language: ["en", "zh"],
+        indexBlog: true,
+        indexPages: true,
+        indexDocs: true,
+      }),
+    ],
+  ],
+}
+
+module.exports = config
