@@ -6,45 +6,38 @@ hide_table_of_contents: true
 ---
 
 
-# 👋 关于我：啵贝琴
+## Hello 👋~
 
-## 简介
-🧑 大学牲，中国大学生
+💻 编程爱好者，编写所感兴趣的项目
 
-🔆 随时保持学习，天天向上
+🛰️ 电子设计狂热爱好者，制作所感兴趣的项目
 
-🕹️ 喜欢高玩类游戏，和平精英老玩家，嘎嘎猛;钟爱肉鸽类
+🦾 我们既要心怀理想，仰望星空，也要埋头苦干
 
-## 详细：
+⌨ 目前正专注于更系统嵌入式开发理论学习
+
+### 🛠 技术栈
+![C/C++](https://img.shields.io/badge/-C%2FC%2B%2B-blue)
+![Linux](https://img.shields.io/badge/-%F0%9F%96%B1Linux-red)
+![QT](https://img.shields.io/badge/-%F0%9F%92%BFQT-bleak)
+![Git](https://img.shields.io/badge/-Git-333333?style=flat-square&logo=git)
+![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat-square&logo=github)
+![drive](https://img.shields.io/badge/-%F0%9F%93%A1drive-blue)
+![嵌入式](https://img.shields.io/badge/-%E2%9A%92%E5%B5%8C%E5%85%A5%E5%BC%8F-blue)
+![数据结构](https://img.shields.io/badge/-%F0%9F%8E%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-blue)
+![FOC](https://img.shields.io/badge/-%F0%9F%9A%9CFOC-blue)
+![STM32](https://img.shields.io/badge/-%F0%9F%9A%81STM32-blue)
+
 <details>
-  <summary>关于我这个大学牲</summary>
+  <summary>相关技能</summary>
   <div>
     <div>
-       - 掌握DC-DC拓扑结构：buck、boost、四开关buck-boost电路。<br/>  
-       - 掌握AC-DC拓扑结构：整流、逆变、反激开关电源。<br/>  
-       - 熟悉运用UART、IIC、SPI、CAN、USB通信协议。<br/>  
-       - 熟悉运用keil、Vscode、编程软件的使用。<br/>  
-       - 熟悉运用Altium Designer、立创EDA专业版、Multisim 14.0软件的使用。<br/>  
-       - 熟悉运用STM32、15单片机开发。<br/>  
+       - 熟悉运用C语言，有较好的工程目录管理能力，具有不错的代码品味。<br/>
+       - 熟悉运用UART、IIC、SPI、CAN、USB通信协议。<br/>
+       - 熟悉运用keil、Vscode、Clion、STM32CubeIDE编程软件的使用。<br/>
+       - 熟悉运用Altium Designer、立创EDA专业版、Multisim 14.0软件的使用。<br/>
+       - 熟悉运用STM32单片机开发。<br/>
+       - 了解Linux系统的使用。<br/>
     </div>
   </div>
 </details>
-
-<details>
-  <summary>关于我的业余爱好</summary>
-  <div>
-    <div>
-        ▶️大逃杀类游戏狂热爱好者：<br/>
-       - 和平精英忠实玩家，五指高玩操作，2020WUCL西部赛区冠军。<br/>  
-       - Steam端《SAR》选手，萌萌画风的大逃杀我受不了了。<br/>  
-        ▶️肉鸽类游戏钟爱粉：<br/>
-       - 元气骑士土著玩家，可惜现在下架了。<br/>  
-       - 霓虹深渊200h+，最近出手游也转战手游了。<br/>  
-    </div>
-  </div>
-</details>
-
-## ☎️ Contact me
-> <a href="http://n0i.cn/2gqBzw">微信</a>
-
-> <a href="mailto:Baby_Qin@foxmail.com">邮箱</a>

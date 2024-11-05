@@ -40,7 +40,7 @@ function HomepageHeader() {
         <p className={styles.leftContainer_p}>我在这里记录一些知识，以免遗忘，也希望对你有用，请随意浏览～</p>
       </div>
       <div className={styles.rightContainer}>
-        <img src={HeroImg} alt='HeroImg' width="200" height="200"/>
+        <img src={HeroImg} alt='HeroImg'/>
       </div>
     </div>
   )
