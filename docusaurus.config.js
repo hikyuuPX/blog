@@ -61,34 +61,8 @@ const config = {
         src: 'img/favicon.webp',
       },
       hideOnScroll: true,
-      items: [ //顶部菜单栏
-        {
-          label: '博客',
-          position: 'right',
-          to: 'docs/Blogs',
-          items: [{
-            label: 'C语言',
-            to: 'docs/Blogs/C',
-          }, {
-            label: 'Linux',
-            to: 'docs/Blogs/linux',
-          }, ],
-        }, {
-          label: '笔记',
-          position: 'right',
-          to: "docs/Notes/",
-        }, {
-          label: '项目',
-          position: 'right',
-          to: "docs/Projects/",
-        }, {
-          label: '关于我',
-          position: 'right',
-          to: "/docs",
-        },
-      ],
     },
-    footer: { //页面底部菜单栏
+    footer: {
       style: 'dark',
       copyright: `本站所有内容遵循<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" >${beian}</a>开源协议，仅限非商业性使用，转载请注明出处</p>
                     <p>Copyright © ${new Date().getFullYear()} - PRESENT hikyuuPX, Inc. Built with Docusaurus.</p>`,
