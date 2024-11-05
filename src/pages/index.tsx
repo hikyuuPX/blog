@@ -1,4 +1,3 @@
-import React from 'react'
 import { Variants, motion, useScroll, useTransform } from 'framer-motion' // Import motion from framer-motion
 
 import Translate from '@docusaurus/Translate'
