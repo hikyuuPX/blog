@@ -65,6 +65,7 @@ const config = {
         {
           label: '博客',
           position: 'right',
+          to: 'docs/Blogs',
           items: [{
             label: 'C语言',
             to: 'docs/Blogs/C',

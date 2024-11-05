@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
-import HeroImg from './img/hero_main.svg'
+import HeroImg from './img/hero_main.png'
 
 import styles from './index.module.css';
 
