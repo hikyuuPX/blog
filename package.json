@@ -24,7 +24,8 @@
     "framer-motion": "^10.13.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.2.0"
+    "@docusaurus/module-type-aliases": "2.2.0",
+    "@iconify/react": "^4.1.1",
   },
   "browserslist": {
     "production": [
